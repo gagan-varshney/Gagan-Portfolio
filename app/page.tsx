@@ -12,11 +12,11 @@ export default function Home() {
     <div className="flex min-h-screen flex-col">
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-14 items-center">
-          <div className="mr-4 hidden md:flex">
+          <div className="mr-4 hidden md:flex ml-6">
             <Link href="/" className="mr-6 flex items-center space-x-2">
               <span className="font-bold">Gagan Varshney</span>
             </Link>
-            <nav className="flex items-center space-x-6 text-sm font-medium">
+            <nav className="flex items-center space-x-8 text-sm font-medium">
               <Link href="#about" className="transition-colors hover:text-foreground/80">
                 About
               </Link>
@@ -90,14 +90,16 @@ export default function Home() {
                 </div>
               </div>
               <div className="flex items-center justify-center">
-                <Image
-                  src="https://res.cloudinary.com/dnquwmnur/image/upload/v1746335833/IMG20250418174807_qw2lxk.jpg"
-                  width={400}
-                  height={400}
-                  alt="Gagan Varshney"
-                  className="rounded-full object-cover border-4 border-border"
-                  priority
-                />
+                <div className="rounded-full overflow-hidden w-[300px] h-[300px] border-4 border-border">
+                  <Image
+                    src="https://res.cloudinary.com/dnquwmnur/image/upload/v1746335833/IMG20250418174807_qw2lxk.jpg"
+                    width={300}
+                    height={300}
+                    alt="Gagan Varshney"
+                    className="object-cover w-full h-full"
+                    priority
+                  />
+                </div>
               </div>
             </div>
           </div>
