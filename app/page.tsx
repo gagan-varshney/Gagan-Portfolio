@@ -91,7 +91,7 @@ export default function Home() {
               </div>
               <div className="flex items-center justify-center">
                 <Image
-                  src="https://drive.google.com/file/d/1Te-oSTyOha2cal2UO3TJqAVZWq-4yDl5/view?height:400"
+                  src="https://res.cloudinary.com/dnquwmnur/image/upload/v1746335833/IMG20250418174807_qw2lxk.jpg"
                   width={400}
                   height={400}
                   alt="Gagan Varshney"
