@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, MapPin, Phone } from "lucide-react"
+import { Download, FileText, Github, Linkedin, Mail, MapPin, Phone } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -19,6 +19,9 @@ export default function Home() {
             <nav className="flex items-center space-x-8 text-sm font-medium">
               <Link href="#about" className="transition-colors hover:text-foreground/80">
                 About
+              </Link>
+              <Link href="#resume" className="transition-colors hover:text-foreground/80">
+                Resume
               </Link>
               <Link href="#experience" className="transition-colors hover:text-foreground/80">
                 Education
@@ -60,13 +63,15 @@ export default function Home() {
         </div>
       </header>
       <main className="flex-1">
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-muted/40">
+        <section className="w-full py-12 md:py-24 lg:py-32 gradient-bg">
           <div className="container px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
               <div className="flex flex-col justify-center space-y-4">
                 <div className="space-y-2">
-                  <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">Gagan Varshney</h1>
-                  <p className="text-xl text-muted-foreground">Full Stack Developer</p>
+                  <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none text-theme-700">
+                    Gagan Varshney
+                  </h1>
+                  <p className="text-xl text-theme-600">Full Stack Developer</p>
                   <div className="flex items-center space-x-2 text-muted-foreground">
                     <MapPin className="h-4 w-4" />
                     <span>Mathura, Uttar Pradesh, India</span>
@@ -82,15 +87,17 @@ export default function Home() {
                 </p>
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
                   <Link href="#contact">
-                    <Button>Contact Me</Button>
+                    <Button className="bg-theme-600 hover:bg-theme-700">Contact Me</Button>
                   </Link>
                   <Link href="#projects">
-                    <Button variant="outline">View Projects</Button>
+                    <Button variant="outline" className="border-theme-600 text-theme-600 hover:bg-theme-50">
+                      View Projects
+                    </Button>
                   </Link>
                 </div>
               </div>
               <div className="flex items-center justify-center">
-                <div className="rounded-full overflow-hidden w-[300px] h-[300px] border-4 border-border">
+                <div className="rounded-full overflow-hidden w-[300px] h-[300px] border-4 border-theme-500/20 shadow-lg">
                   <Image
                     src="https://res.cloudinary.com/dnquwmnur/image/upload/v1746335833/IMG20250418174807_qw2lxk.jpg"
                     width={300}
@@ -109,7 +116,7 @@ export default function Home() {
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">About Me</h2>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-theme-700">About Me</h2>
                 <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
                   I'm a Full Stack Developer specializing in React.js, Node.js, and MongoDB with expertise in building
                   responsive web applications. Certified in MongoDB and experienced in AI integration projects. I have
@@ -121,19 +128,121 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="experience" className="w-full py-12 md:py-24 lg:py-32 bg-muted/40">
+        <section id="resume" className="w-full py-12 md:py-24 lg:py-32 gradient-bg">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-8 text-center">
+              <div className="space-y-2">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-theme-700">Resume</h2>
+                <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
+                  View or download my professional resume to learn more about my experience and qualifications.
+                </p>
+              </div>
+
+              <div className="mx-auto max-w-4xl w-full bg-white p-8 rounded-lg resume-container">
+                <div className="flex flex-col md:flex-row justify-between items-center mb-8">
+                  <div className="text-left mb-4 md:mb-0">
+                    <h3 className="text-2xl font-bold text-theme-700">Gagan Varshney</h3>
+                    <p className="text-theme-600">Full Stack Developer</p>
+                  </div>
+                  <Button className="bg-theme-600 hover:bg-theme-700">
+                    <Download className="mr-2 h-4 w-4" /> Download Resume
+                  </Button>
+                </div>
+
+                <div className="grid gap-6 md:grid-cols-2">
+                  <div className="space-y-4">
+                    <div>
+                      <h4 className="text-lg font-semibold flex items-center text-theme-700">
+                        <FileText className="mr-2 h-5 w-5" /> Education
+                      </h4>
+                      <div className="mt-2 space-y-2">
+                        <div className="border-l-2 border-theme-500 pl-4 py-1">
+                          <p className="font-medium">Master of Computer Application</p>
+                          <p className="text-sm text-muted-foreground">GLA University Mathura • 2023 - Present</p>
+                        </div>
+                        <div className="border-l-2 border-theme-500 pl-4 py-1">
+                          <p className="font-medium">Bachelor of Science</p>
+                          <p className="text-sm text-muted-foreground">Dr. Bhimrao Ambedkar University • 2020 - 2023</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div>
+                      <h4 className="text-lg font-semibold flex items-center text-theme-700">
+                        <FileText className="mr-2 h-5 w-5" /> Certifications
+                      </h4>
+                      <div className="mt-2 space-y-2">
+                        <div className="border-l-2 border-theme-500 pl-4 py-1">
+                          <p className="font-medium">MongoDB for Students</p>
+                          <p className="text-sm text-muted-foreground">MongoDB University • 2024</p>
+                        </div>
+                        <div className="border-l-2 border-theme-500 pl-4 py-1">
+                          <p className="font-medium">SEO Certification</p>
+                          <p className="text-sm text-muted-foreground">Semrush Academy • 2024</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="space-y-4">
+                    <div>
+                      <h4 className="text-lg font-semibold flex items-center text-theme-700">
+                        <FileText className="mr-2 h-5 w-5" /> Technical Skills
+                      </h4>
+                      <div className="mt-2 grid grid-cols-2 gap-2">
+                        <div className="bg-theme-50 px-3 py-1 rounded-full text-sm text-theme-700">React.js</div>
+                        <div className="bg-theme-50 px-3 py-1 rounded-full text-sm text-theme-700">Node.js</div>
+                        <div className="bg-theme-50 px-3 py-1 rounded-full text-sm text-theme-700">MongoDB</div>
+                        <div className="bg-theme-50 px-3 py-1 rounded-full text-sm text-theme-700">JavaScript</div>
+                        <div className="bg-theme-50 px-3 py-1 rounded-full text-sm text-theme-700">Next.js</div>
+                        <div className="bg-theme-50 px-3 py-1 rounded-full text-sm text-theme-700">Tailwind CSS</div>
+                      </div>
+                    </div>
+
+                    <div>
+                      <h4 className="text-lg font-semibold flex items-center text-theme-700">
+                        <FileText className="mr-2 h-5 w-5" /> Projects
+                      </h4>
+                      <div className="mt-2 space-y-2">
+                        <div className="border-l-2 border-theme-500 pl-4 py-1">
+                          <p className="font-medium">AI Trip Planner</p>
+                          <p className="text-sm text-muted-foreground">React.js, Firebase, Gemini AI</p>
+                        </div>
+                        <div className="border-l-2 border-theme-500 pl-4 py-1">
+                          <p className="font-medium">JioCinema Clone</p>
+                          <p className="text-sm text-muted-foreground">React.js, Node.js, MongoDB</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-8 text-center">
+                  <p className="text-muted-foreground">For a complete version of my resume, please download the PDF.</p>
+                  <Button className="mt-4 bg-theme-600 hover:bg-theme-700">
+                    <Download className="mr-2 h-4 w-4" /> Download Full Resume
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="experience" className="w-full py-12 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Education</h2>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-theme-700">
+                  Education
+                </h2>
                 <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
                   My academic background and qualifications.
                 </p>
               </div>
               <div className="mx-auto grid max-w-5xl items-start gap-6 md:gap-8 lg:grid-cols-2">
-                <Card>
+                <Card className="border-theme-200 shadow-md hover:shadow-lg transition-shadow">
                   <CardHeader>
-                    <CardTitle>Master of Computer Application</CardTitle>
+                    <CardTitle className="text-theme-700">Master of Computer Application</CardTitle>
                     <CardDescription>GLA University Mathura • Aug 2023 - Present</CardDescription>
                   </CardHeader>
                   <CardContent>
@@ -143,9 +252,9 @@ export default function Home() {
                     </p>
                   </CardContent>
                 </Card>
-                <Card>
+                <Card className="border-theme-200 shadow-md hover:shadow-lg transition-shadow">
                   <CardHeader>
-                    <CardTitle>Bachelor of Science</CardTitle>
+                    <CardTitle className="text-theme-700">Bachelor of Science</CardTitle>
                     <CardDescription>Dr. Bhimrao Ambedkar University, Agra • Aug 2020 - June 2023</CardDescription>
                   </CardHeader>
                   <CardContent>
@@ -160,19 +269,19 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="projects" className="w-full py-12 md:py-24 lg:py-32">
+        <section id="projects" className="w-full py-12 md:py-24 lg:py-32 gradient-bg">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Projects</h2>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-theme-700">Projects</h2>
                 <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
                   Showcasing my recent work and technical expertise.
                 </p>
               </div>
               <div className="mx-auto grid max-w-5xl items-start gap-6 md:gap-8 lg:grid-cols-2">
-                <Card>
+                <Card className="border-theme-200 shadow-md hover:shadow-lg transition-shadow">
                   <CardHeader>
-                    <CardTitle>AI Trip Planner</CardTitle>
+                    <CardTitle className="text-theme-700">AI Trip Planner</CardTitle>
                     <CardDescription>React.js, Firebase, Gemini AI</CardDescription>
                   </CardHeader>
                   <CardContent>
@@ -190,7 +299,7 @@ export default function Home() {
                       <li>Deployed the application on Vercel with CI/CD pipeline support.</li>
                     </ul>
                     <div className="mt-4">
-                      <Button variant="outline" asChild>
+                      <Button variant="outline" className="border-theme-600 text-theme-600 hover:bg-theme-50" asChild>
                         <Link href="https://github.com/gagan-varshney" target="_blank" rel="noreferrer">
                           View Project
                         </Link>
@@ -198,9 +307,9 @@ export default function Home() {
                     </div>
                   </CardContent>
                 </Card>
-                <Card>
+                <Card className="border-theme-200 shadow-md hover:shadow-lg transition-shadow">
                   <CardHeader>
-                    <CardTitle>JioCinema Clone</CardTitle>
+                    <CardTitle className="text-theme-700">JioCinema Clone</CardTitle>
                     <CardDescription>React.js, Node.js, MongoDB</CardDescription>
                   </CardHeader>
                   <CardContent>
@@ -217,7 +326,7 @@ export default function Home() {
                       <li>Added intelligent recommendation system using trending content and user behavior.</li>
                     </ul>
                     <div className="mt-4">
-                      <Button variant="outline" asChild>
+                      <Button variant="outline" className="border-theme-600 text-theme-600 hover:bg-theme-50" asChild>
                         <Link href="https://github.com/gagan-varshney" target="_blank" rel="noreferrer">
                           View Project
                         </Link>
@@ -230,90 +339,110 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="skills" className="w-full py-12 md:py-24 lg:py-32 bg-muted/40">
+        <section id="skills" className="w-full py-12 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Skills</h2>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-theme-700">Skills</h2>
                 <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
                   Technologies and tools I specialize in.
                 </p>
               </div>
               <div className="mx-auto w-full max-w-3xl">
                 <Tabs defaultValue="frontend" className="w-full">
-                  <TabsList className="grid w-full grid-cols-4">
-                    <TabsTrigger value="frontend">Frontend</TabsTrigger>
-                    <TabsTrigger value="backend">Backend</TabsTrigger>
-                    <TabsTrigger value="database">Database</TabsTrigger>
-                    <TabsTrigger value="tools">Tools</TabsTrigger>
+                  <TabsList className="grid w-full grid-cols-4 bg-theme-100">
+                    <TabsTrigger
+                      value="frontend"
+                      className="data-[state=active]:bg-theme-600 data-[state=active]:text-white"
+                    >
+                      Frontend
+                    </TabsTrigger>
+                    <TabsTrigger
+                      value="backend"
+                      className="data-[state=active]:bg-theme-600 data-[state=active]:text-white"
+                    >
+                      Backend
+                    </TabsTrigger>
+                    <TabsTrigger
+                      value="database"
+                      className="data-[state=active]:bg-theme-600 data-[state=active]:text-white"
+                    >
+                      Database
+                    </TabsTrigger>
+                    <TabsTrigger
+                      value="tools"
+                      className="data-[state=active]:bg-theme-600 data-[state=active]:text-white"
+                    >
+                      Tools
+                    </TabsTrigger>
                   </TabsList>
                   <TabsContent value="frontend" className="mt-6">
                     <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
-                      <div className="flex flex-col items-center space-y-2 rounded-lg border p-4">
-                        <div className="text-lg font-semibold">React.js</div>
+                      <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-md transition-shadow">
+                        <div className="text-lg font-semibold text-theme-700">React.js</div>
                       </div>
-                      <div className="flex flex-col items-center space-y-2 rounded-lg border p-4">
-                        <div className="text-lg font-semibold">Next.js</div>
+                      <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-md transition-shadow">
+                        <div className="text-lg font-semibold text-theme-700">Next.js</div>
                       </div>
-                      <div className="flex flex-col items-center space-y-2 rounded-lg border p-4">
-                        <div className="text-lg font-semibold">JavaScript</div>
+                      <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-md transition-shadow">
+                        <div className="text-lg font-semibold text-theme-700">JavaScript</div>
                       </div>
-                      <div className="flex flex-col items-center space-y-2 rounded-lg border p-4">
-                        <div className="text-lg font-semibold">HTML5</div>
+                      <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-md transition-shadow">
+                        <div className="text-lg font-semibold text-theme-700">HTML5</div>
                       </div>
-                      <div className="flex flex-col items-center space-y-2 rounded-lg border p-4">
-                        <div className="text-lg font-semibold">CSS3</div>
+                      <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-md transition-shadow">
+                        <div className="text-lg font-semibold text-theme-700">CSS3</div>
                       </div>
-                      <div className="flex flex-col items-center space-y-2 rounded-lg border p-4">
-                        <div className="text-lg font-semibold">Tailwind CSS</div>
+                      <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-md transition-shadow">
+                        <div className="text-lg font-semibold text-theme-700">Tailwind CSS</div>
                       </div>
-                      <div className="flex flex-col items-center space-y-2 rounded-lg border p-4">
-                        <div className="text-lg font-semibold">Bootstrap</div>
+                      <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-md transition-shadow">
+                        <div className="text-lg font-semibold text-theme-700">Bootstrap</div>
                       </div>
                     </div>
                   </TabsContent>
                   <TabsContent value="backend" className="mt-6">
                     <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
-                      <div className="flex flex-col items-center space-y-2 rounded-lg border p-4">
-                        <div className="text-lg font-semibold">Node.js</div>
+                      <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-md transition-shadow">
+                        <div className="text-lg font-semibold text-theme-700">Node.js</div>
                       </div>
-                      <div className="flex flex-col items-center space-y-2 rounded-lg border p-4">
-                        <div className="text-lg font-semibold">Express.js</div>
+                      <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-md transition-shadow">
+                        <div className="text-lg font-semibold text-theme-700">Express.js</div>
                       </div>
-                      <div className="flex flex-col items-center space-y-2 rounded-lg border p-4">
-                        <div className="text-lg font-semibold">RESTful APIs</div>
+                      <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-md transition-shadow">
+                        <div className="text-lg font-semibold text-theme-700">RESTful APIs</div>
                       </div>
-                      <div className="flex flex-col items-center space-y-2 rounded-lg border p-4">
-                        <div className="text-lg font-semibold">Firebase</div>
+                      <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-md transition-shadow">
+                        <div className="text-lg font-semibold text-theme-700">Firebase</div>
                       </div>
                     </div>
                   </TabsContent>
                   <TabsContent value="database" className="mt-6">
                     <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
-                      <div className="flex flex-col items-center space-y-2 rounded-lg border p-4">
-                        <div className="text-lg font-semibold">MongoDB</div>
+                      <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-md transition-shadow">
+                        <div className="text-lg font-semibold text-theme-700">MongoDB</div>
                       </div>
-                      <div className="flex flex-col items-center space-y-2 rounded-lg border p-4">
-                        <div className="text-lg font-semibold">MySQL</div>
+                      <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-md transition-shadow">
+                        <div className="text-lg font-semibold text-theme-700">MySQL</div>
                       </div>
-                      <div className="flex flex-col items-center space-y-2 rounded-lg border p-4">
-                        <div className="text-lg font-semibold">Mongoose</div>
+                      <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-md transition-shadow">
+                        <div className="text-lg font-semibold text-theme-700">Mongoose</div>
                       </div>
                     </div>
                   </TabsContent>
                   <TabsContent value="tools" className="mt-6">
                     <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
-                      <div className="flex flex-col items-center space-y-2 rounded-lg border p-4">
-                        <div className="text-lg font-semibold">Git</div>
+                      <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-md transition-shadow">
+                        <div className="text-lg font-semibold text-theme-700">Git</div>
                       </div>
-                      <div className="flex flex-col items-center space-y-2 rounded-lg border p-4">
-                        <div className="text-lg font-semibold">Docker</div>
+                      <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-md transition-shadow">
+                        <div className="text-lg font-semibold text-theme-700">Docker</div>
                       </div>
-                      <div className="flex flex-col items-center space-y-2 rounded-lg border p-4">
-                        <div className="text-lg font-semibold">npm</div>
+                      <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-md transition-shadow">
+                        <div className="text-lg font-semibold text-theme-700">npm</div>
                       </div>
-                      <div className="flex flex-col items-center space-y-2 rounded-lg border p-4">
-                        <div className="text-lg font-semibold">Postman</div>
+                      <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-md transition-shadow">
+                        <div className="text-lg font-semibold text-theme-700">Postman</div>
                       </div>
                     </div>
                   </TabsContent>
@@ -323,11 +452,11 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="w-full py-12 md:py-24 lg:py-32">
+        <section className="w-full py-12 md:py-24 lg:py-32 gradient-bg">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-theme-700">
                   Certifications & Achievements
                 </h2>
                 <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
@@ -335,9 +464,9 @@ export default function Home() {
                 </p>
               </div>
               <div className="mx-auto grid max-w-5xl items-start gap-6 md:gap-8 lg:grid-cols-2">
-                <Card>
+                <Card className="border-theme-200 shadow-md hover:shadow-lg transition-shadow">
                   <CardHeader>
-                    <CardTitle>Certifications</CardTitle>
+                    <CardTitle className="text-theme-700">Certifications</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <ul className="list-disc pl-5 space-y-2 text-left">
@@ -347,9 +476,9 @@ export default function Home() {
                     </ul>
                   </CardContent>
                 </Card>
-                <Card>
+                <Card className="border-theme-200 shadow-md hover:shadow-lg transition-shadow">
                   <CardHeader>
-                    <CardTitle>Achievements</CardTitle>
+                    <CardTitle className="text-theme-700">Achievements</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <ul className="list-disc pl-5 space-y-2 text-left">
@@ -363,60 +492,62 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="contact" className="w-full py-12 md:py-24 lg:py-32 bg-muted/40">
+        <section id="contact" className="w-full py-12 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Contact Me</h2>
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-theme-700">
+                  Contact Me
+                </h2>
                 <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
                   Interested in working together? Reach out to me through any of these channels or fill out the form
                   below.
                 </p>
               </div>
               <div className="mx-auto grid max-w-4xl gap-6 py-6 md:grid-cols-3">
-                <Card className="flex flex-col items-center justify-center text-center">
+                <Card className="border-theme-200 shadow-md hover:shadow-lg transition-shadow">
                   <CardHeader>
-                    <Mail className="h-10 w-10 mb-2" />
-                    <CardTitle>Email</CardTitle>
+                    <Mail className="h-10 w-10 mb-2 text-theme-600" />
+                    <CardTitle className="text-theme-700">Email</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <Link href="mailto:gv1678087@gmail.com" className="text-primary hover:underline">
+                    <Link href="mailto:gv1678087@gmail.com" className="text-theme-600 hover:underline">
                       gv1678087@gmail.com
                     </Link>
                   </CardContent>
                 </Card>
-                <Card className="flex flex-col items-center justify-center text-center">
+                <Card className="border-theme-200 shadow-md hover:shadow-lg transition-shadow">
                   <CardHeader>
-                    <Linkedin className="h-10 w-10 mb-2" />
-                    <CardTitle>LinkedIn</CardTitle>
+                    <Linkedin className="h-10 w-10 mb-2 text-theme-600" />
+                    <CardTitle className="text-theme-700">LinkedIn</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <Link
                       href="https://www.linkedin.com/in/gagan-varshney22/"
                       target="_blank"
                       rel="noreferrer"
-                      className="text-primary hover:underline"
+                      className="text-theme-600 hover:underline"
                     >
                       linkedin.com/in/gagan-varshney22
                     </Link>
                   </CardContent>
                 </Card>
-                <Card className="flex flex-col items-center justify-center text-center">
+                <Card className="border-theme-200 shadow-md hover:shadow-lg transition-shadow">
                   <CardHeader>
-                    <Phone className="h-10 w-10 mb-2" />
-                    <CardTitle>Phone</CardTitle>
+                    <Phone className="h-10 w-10 mb-2 text-theme-600" />
+                    <CardTitle className="text-theme-700">Phone</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <Link href="tel:+918979840948" className="text-primary hover:underline">
+                    <Link href="tel:+918979840948" className="text-theme-600 hover:underline">
                       +91 8979840948
                     </Link>
                   </CardContent>
                 </Card>
               </div>
               <div className="mx-auto w-full max-w-md">
-                <Card>
+                <Card className="border-theme-200 shadow-md">
                   <CardHeader>
-                    <CardTitle>Send me a message</CardTitle>
+                    <CardTitle className="text-theme-700">Send me a message</CardTitle>
                     <CardDescription>
                       Fill out the form below and I'll get back to you as soon as possible.
                     </CardDescription>
