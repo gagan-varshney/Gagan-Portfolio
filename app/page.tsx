@@ -1,4 +1,16 @@
-import { Download, FileText, Github, Linkedin, Mail, MapPin, Phone } from "lucide-react"
+import {
+  Download,
+  FileText,
+  Github,
+  Linkedin,
+  Mail,
+  MapPin,
+  Phone,
+  Code,
+  Server,
+  Database,
+  PenToolIcon as Tool,
+} from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -144,7 +156,7 @@ export default function Home() {
                     <h3 className="text-2xl font-bold text-theme-700">Gagan Varshney</h3>
                     <p className="text-theme-600">Full Stack Developer</p>
                   </div>
-                  <a href="/gagan-varshney-resume.pdf" download>
+                  <a href="/gagan-varshney-resume.txt" download="gagan-varshney-resume.txt">
                     <Button className="bg-theme-600 hover:bg-theme-700">
                       <Download className="mr-2 h-4 w-4" /> Download Resume
                     </Button>
@@ -220,8 +232,10 @@ export default function Home() {
                 </div>
 
                 <div className="mt-8 text-center">
-                  <p className="text-muted-foreground">For a complete version of my resume, please download the PDF.</p>
-                  <a href="/gagan-varshney-resume.pdf" download>
+                  <p className="text-muted-foreground">
+                    For a complete version of my resume, please download the text file.
+                  </p>
+                  <a href="/gagan-varshney-resume.txt" download="gagan-varshney-resume.txt">
                     <Button className="mt-4 bg-theme-600 hover:bg-theme-700">
                       <Download className="mr-2 h-4 w-4" /> Download Full Resume
                     </Button>
@@ -357,96 +371,158 @@ export default function Home() {
                   <TabsList className="grid w-full grid-cols-4 bg-theme-100">
                     <TabsTrigger
                       value="frontend"
-                      className="data-[state=active]:bg-theme-600 data-[state=active]:text-white"
+                      className="data-[state=active]:bg-theme-600 data-[state=active]:text-white flex items-center gap-2"
                     >
-                      Frontend
+                      <Code className="h-4 w-4" /> Frontend
                     </TabsTrigger>
                     <TabsTrigger
                       value="backend"
-                      className="data-[state=active]:bg-theme-600 data-[state=active]:text-white"
+                      className="data-[state=active]:bg-theme-600 data-[state=active]:text-white flex items-center gap-2"
                     >
-                      Backend
+                      <Server className="h-4 w-4" /> Backend
                     </TabsTrigger>
                     <TabsTrigger
                       value="database"
-                      className="data-[state=active]:bg-theme-600 data-[state=active]:text-white"
+                      className="data-[state=active]:bg-theme-600 data-[state=active]:text-white flex items-center gap-2"
                     >
-                      Database
+                      <Database className="h-4 w-4" /> Database
                     </TabsTrigger>
                     <TabsTrigger
                       value="tools"
-                      className="data-[state=active]:bg-theme-600 data-[state=active]:text-white"
+                      className="data-[state=active]:bg-theme-600 data-[state=active]:text-white flex items-center gap-2"
                     >
-                      Tools
+                      <Tool className="h-4 w-4" /> Tools
                     </TabsTrigger>
                   </TabsList>
                   <TabsContent value="frontend" className="mt-6">
                     <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
-                      <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-md transition-shadow">
-                        <div className="text-lg font-semibold text-theme-700">React.js</div>
+                      <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-lg transition-all hover:border-theme-500 hover:bg-theme-50 group">
+                        <div className="h-12 w-12 rounded-full bg-theme-100 flex items-center justify-center group-hover:bg-theme-200 transition-colors">
+                          <span className="text-xl font-bold text-theme-700">R</span>
+                        </div>
+                        <div className="text-lg font-semibold text-theme-700 group-hover:text-theme-800">React.js</div>
                       </div>
-                      <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-md transition-shadow">
-                        <div className="text-lg font-semibold text-theme-700">Next.js</div>
+                      <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-lg transition-all hover:border-theme-500 hover:bg-theme-50 group">
+                        <div className="h-12 w-12 rounded-full bg-theme-100 flex items-center justify-center group-hover:bg-theme-200 transition-colors">
+                          <span className="text-xl font-bold text-theme-700">N</span>
+                        </div>
+                        <div className="text-lg font-semibold text-theme-700 group-hover:text-theme-800">Next.js</div>
                       </div>
-                      <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-md transition-shadow">
-                        <div className="text-lg font-semibold text-theme-700">JavaScript</div>
+                      <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-lg transition-all hover:border-theme-500 hover:bg-theme-50 group">
+                        <div className="h-12 w-12 rounded-full bg-theme-100 flex items-center justify-center group-hover:bg-theme-200 transition-colors">
+                          <span className="text-xl font-bold text-theme-700">JS</span>
+                        </div>
+                        <div className="text-lg font-semibold text-theme-700 group-hover:text-theme-800">
+                          JavaScript
+                        </div>
                       </div>
-                      <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-md transition-shadow">
-                        <div className="text-lg font-semibold text-theme-700">HTML5</div>
+                      <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-lg transition-all hover:border-theme-500 hover:bg-theme-50 group">
+                        <div className="h-12 w-12 rounded-full bg-theme-100 flex items-center justify-center group-hover:bg-theme-200 transition-colors">
+                          <span className="text-xl font-bold text-theme-700">H5</span>
+                        </div>
+                        <div className="text-lg font-semibold text-theme-700 group-hover:text-theme-800">HTML5</div>
                       </div>
-                      <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-md transition-shadow">
-                        <div className="text-lg font-semibold text-theme-700">CSS3</div>
+                      <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-lg transition-all hover:border-theme-500 hover:bg-theme-50 group">
+                        <div className="h-12 w-12 rounded-full bg-theme-100 flex items-center justify-center group-hover:bg-theme-200 transition-colors">
+                          <span className="text-xl font-bold text-theme-700">C3</span>
+                        </div>
+                        <div className="text-lg font-semibold text-theme-700 group-hover:text-theme-800">CSS3</div>
                       </div>
-                      <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-md transition-shadow">
-                        <div className="text-lg font-semibold text-theme-700">Tailwind CSS</div>
+                      <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-lg transition-all hover:border-theme-500 hover:bg-theme-50 group">
+                        <div className="h-12 w-12 rounded-full bg-theme-100 flex items-center justify-center group-hover:bg-theme-200 transition-colors">
+                          <span className="text-xl font-bold text-theme-700">TW</span>
+                        </div>
+                        <div className="text-lg font-semibold text-theme-700 group-hover:text-theme-800">
+                          Tailwind CSS
+                        </div>
                       </div>
-                      <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-md transition-shadow">
-                        <div className="text-lg font-semibold text-theme-700">Bootstrap</div>
+                      <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-lg transition-all hover:border-theme-500 hover:bg-theme-50 group">
+                        <div className="h-12 w-12 rounded-full bg-theme-100 flex items-center justify-center group-hover:bg-theme-200 transition-colors">
+                          <span className="text-xl font-bold text-theme-700">BS</span>
+                        </div>
+                        <div className="text-lg font-semibold text-theme-700 group-hover:text-theme-800">Bootstrap</div>
                       </div>
                     </div>
                   </TabsContent>
                   <TabsContent value="backend" className="mt-6">
                     <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
-                      <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-md transition-shadow">
-                        <div className="text-lg font-semibold text-theme-700">Node.js</div>
+                      <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-lg transition-all hover:border-theme-500 hover:bg-theme-50 group">
+                        <div className="h-12 w-12 rounded-full bg-theme-100 flex items-center justify-center group-hover:bg-theme-200 transition-colors">
+                          <span className="text-xl font-bold text-theme-700">NJ</span>
+                        </div>
+                        <div className="text-lg font-semibold text-theme-700 group-hover:text-theme-800">Node.js</div>
                       </div>
-                      <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-md transition-shadow">
-                        <div className="text-lg font-semibold text-theme-700">Express.js</div>
+                      <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-lg transition-all hover:border-theme-500 hover:bg-theme-50 group">
+                        <div className="h-12 w-12 rounded-full bg-theme-100 flex items-center justify-center group-hover:bg-theme-200 transition-colors">
+                          <span className="text-xl font-bold text-theme-700">EX</span>
+                        </div>
+                        <div className="text-lg font-semibold text-theme-700 group-hover:text-theme-800">
+                          Express.js
+                        </div>
                       </div>
-                      <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-md transition-shadow">
-                        <div className="text-lg font-semibold text-theme-700">RESTful APIs</div>
+                      <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-lg transition-all hover:border-theme-500 hover:bg-theme-50 group">
+                        <div className="h-12 w-12 rounded-full bg-theme-100 flex items-center justify-center group-hover:bg-theme-200 transition-colors">
+                          <span className="text-xl font-bold text-theme-700">API</span>
+                        </div>
+                        <div className="text-lg font-semibold text-theme-700 group-hover:text-theme-800">
+                          RESTful APIs
+                        </div>
                       </div>
-                      <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-md transition-shadow">
-                        <div className="text-lg font-semibold text-theme-700">Firebase</div>
+                      <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-lg transition-all hover:border-theme-500 hover:bg-theme-50 group">
+                        <div className="h-12 w-12 rounded-full bg-theme-100 flex items-center justify-center group-hover:bg-theme-200 transition-colors">
+                          <span className="text-xl font-bold text-theme-700">FB</span>
+                        </div>
+                        <div className="text-lg font-semibold text-theme-700 group-hover:text-theme-800">Firebase</div>
                       </div>
                     </div>
                   </TabsContent>
                   <TabsContent value="database" className="mt-6">
                     <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
-                      <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-md transition-shadow">
-                        <div className="text-lg font-semibold text-theme-700">MongoDB</div>
+                      <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-lg transition-all hover:border-theme-500 hover:bg-theme-50 group">
+                        <div className="h-12 w-12 rounded-full bg-theme-100 flex items-center justify-center group-hover:bg-theme-200 transition-colors">
+                          <span className="text-xl font-bold text-theme-700">MDB</span>
+                        </div>
+                        <div className="text-lg font-semibold text-theme-700 group-hover:text-theme-800">MongoDB</div>
                       </div>
-                      <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-md transition-shadow">
-                        <div className="text-lg font-semibold text-theme-700">MySQL</div>
+                      <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-lg transition-all hover:border-theme-500 hover:bg-theme-50 group">
+                        <div className="h-12 w-12 rounded-full bg-theme-100 flex items-center justify-center group-hover:bg-theme-200 transition-colors">
+                          <span className="text-xl font-bold text-theme-700">SQL</span>
+                        </div>
+                        <div className="text-lg font-semibold text-theme-700 group-hover:text-theme-800">MySQL</div>
                       </div>
-                      <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-md transition-shadow">
-                        <div className="text-lg font-semibold text-theme-700">Mongoose</div>
+                      <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-lg transition-all hover:border-theme-500 hover:bg-theme-50 group">
+                        <div className="h-12 w-12 rounded-full bg-theme-100 flex items-center justify-center group-hover:bg-theme-200 transition-colors">
+                          <span className="text-xl font-bold text-theme-700">MG</span>
+                        </div>
+                        <div className="text-lg font-semibold text-theme-700 group-hover:text-theme-800">Mongoose</div>
                       </div>
                     </div>
                   </TabsContent>
                   <TabsContent value="tools" className="mt-6">
                     <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
-                      <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-md transition-shadow">
-                        <div className="text-lg font-semibold text-theme-700">Git</div>
+                      <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-lg transition-all hover:border-theme-500 hover:bg-theme-50 group">
+                        <div className="h-12 w-12 rounded-full bg-theme-100 flex items-center justify-center group-hover:bg-theme-200 transition-colors">
+                          <span className="text-xl font-bold text-theme-700">GIT</span>
+                        </div>
+                        <div className="text-lg font-semibold text-theme-700 group-hover:text-theme-800">Git</div>
                       </div>
-                      <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-md transition-shadow">
-                        <div className="text-lg font-semibold text-theme-700">Docker</div>
+                      <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-lg transition-all hover:border-theme-500 hover:bg-theme-50 group">
+                        <div className="h-12 w-12 rounded-full bg-theme-100 flex items-center justify-center group-hover:bg-theme-200 transition-colors">
+                          <span className="text-xl font-bold text-theme-700">DKR</span>
+                        </div>
+                        <div className="text-lg font-semibold text-theme-700 group-hover:text-theme-800">Docker</div>
                       </div>
-                      <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-md transition-shadow">
-                        <div className="text-lg font-semibold text-theme-700">npm</div>
+                      <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-lg transition-all hover:border-theme-500 hover:bg-theme-50 group">
+                        <div className="h-12 w-12 rounded-full bg-theme-100 flex items-center justify-center group-hover:bg-theme-200 transition-colors">
+                          <span className="text-xl font-bold text-theme-700">NPM</span>
+                        </div>
+                        <div className="text-lg font-semibold text-theme-700 group-hover:text-theme-800">npm</div>
                       </div>
-                      <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-md transition-shadow">
-                        <div className="text-lg font-semibold text-theme-700">Postman</div>
+                      <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-lg transition-all hover:border-theme-500 hover:bg-theme-50 group">
+                        <div className="h-12 w-12 rounded-full bg-theme-100 flex items-center justify-center group-hover:bg-theme-200 transition-colors">
+                          <span className="text-xl font-bold text-theme-700">PM</span>
+                        </div>
+                        <div className="text-lg font-semibold text-theme-700 group-hover:text-theme-800">Postman</div>
                       </div>
                     </div>
                   </TabsContent>
