@@ -144,9 +144,11 @@ export default function Home() {
                     <h3 className="text-2xl font-bold text-theme-700">Gagan Varshney</h3>
                     <p className="text-theme-600">Full Stack Developer</p>
                   </div>
-                  <Button className="bg-theme-600 hover:bg-theme-700">
-                    <Download className="mr-2 h-4 w-4" /> Download Resume
-                  </Button>
+                  <a href="/gagan-varshney-resume.pdf" download>
+                    <Button className="bg-theme-600 hover:bg-theme-700">
+                      <Download className="mr-2 h-4 w-4" /> Download Resume
+                    </Button>
+                  </a>
                 </div>
 
                 <div className="grid gap-6 md:grid-cols-2">
@@ -219,9 +221,11 @@ export default function Home() {
 
                 <div className="mt-8 text-center">
                   <p className="text-muted-foreground">For a complete version of my resume, please download the PDF.</p>
-                  <Button className="mt-4 bg-theme-600 hover:bg-theme-700">
-                    <Download className="mr-2 h-4 w-4" /> Download Full Resume
-                  </Button>
+                  <a href="/gagan-varshney-resume.pdf" download>
+                    <Button className="mt-4 bg-theme-600 hover:bg-theme-700">
+                      <Download className="mr-2 h-4 w-4" /> Download Full Resume
+                    </Button>
+                  </a>
                 </div>
               </div>
             </div>
