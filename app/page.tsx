@@ -18,6 +18,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import ContactForm from "@/components/contact-form"
+import AIChat from "@/components/ai-chat"
 
 export default function Home() {
   return (
@@ -43,6 +44,9 @@ export default function Home() {
               </Link>
               <Link href="#skills" className="transition-colors hover:text-foreground/80">
                 Skills
+              </Link>
+              <Link href="#ai-assistant" className="transition-colors hover:text-foreground/80">
+                AI Assistant
               </Link>
               <Link href="#contact" className="transition-colors hover:text-foreground/80">
                 Contact
@@ -156,7 +160,7 @@ export default function Home() {
                     <h3 className="text-2xl font-bold text-theme-700">Gagan Varshney</h3>
                     <p className="text-theme-600">Full Stack Developer</p>
                   </div>
-                  <a href="/gagan-varshney-resume.txt" download="gagan-varshney-resume.txt">
+                  <a href="/gagan-varshney-resume.pdf" download>
                     <Button className="bg-theme-600 hover:bg-theme-700">
                       <Download className="mr-2 h-4 w-4" /> Download Resume
                     </Button>
@@ -232,10 +236,8 @@ export default function Home() {
                 </div>
 
                 <div className="mt-8 text-center">
-                  <p className="text-muted-foreground">
-                    For a complete version of my resume, please download the text file.
-                  </p>
-                  <a href="/gagan-varshney-resume.txt" download="gagan-varshney-resume.txt">
+                  <p className="text-muted-foreground">For a complete version of my resume, please download the PDF.</p>
+                  <a href="/gagan-varshney-resume.pdf" download>
                     <Button className="mt-4 bg-theme-600 hover:bg-theme-700">
                       <Download className="mr-2 h-4 w-4" /> Download Full Resume
                     </Button>
@@ -532,7 +534,25 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="w-full py-12 md:py-24 lg:py-32 gradient-bg">
+        <section id="ai-assistant" className="w-full py-12 md:py-24 lg:py-32 gradient-bg">
+          <div className="container px-4 md:px-6">
+            <div className="flex flex-col items-center justify-center space-y-8 text-center">
+              <div className="space-y-2">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-theme-700">
+                  AI Assistant
+                </h2>
+                <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
+                  Chat with my AI assistant powered by Grok to learn more about my skills and experience.
+                </p>
+              </div>
+              <div className="flex items-center justify-center w-full">
+                <AIChat />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="w-full py-12 md:py-24 lg:py-32">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
@@ -572,7 +592,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="contact" className="w-full py-12 md:py-24 lg:py-32">
+        <section id="contact" className="w-full py-12 md:py-24 lg:py-32 gradient-bg">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
