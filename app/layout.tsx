@@ -22,9 +22,18 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          <Suspense>{children}</Suspense>
+          <Suspense fallback={null}>{children}</Suspense>
         </ThemeProvider>
         <Analytics />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.onload = function() {
+                window.scrollTo(0, 0);
+              }
+            `,
+          }}
+        />
       </body>
     </html>
   )

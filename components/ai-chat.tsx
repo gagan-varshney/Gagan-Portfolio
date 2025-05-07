@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { askGrok } from "@/app/actions/ai"
+import { useToast } from "@/hooks/use-toast"
 
 export default function AIChat() {
   const [messages, setMessages] = useState<{ role: "user" | "assistant"; content: string }[]>([
@@ -19,6 +20,7 @@ export default function AIChat() {
   const [input, setInput] = useState("")
   const [isLoading, setIsLoading] = useState(false)
   const messagesEndRef = useRef<HTMLDivElement>(null)
+  const { toast } = useToast()
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -26,14 +28,20 @@ export default function AIChat() {
 
     const userMessage = { role: "user" as const, content: input }
     setMessages((prev) => [...prev, userMessage])
+    const userInput = input
     setInput("")
     setIsLoading(true)
 
     try {
-      const response = await askGrok(input)
+      const response = await askGrok(userInput)
       setMessages((prev) => [...prev, { role: "assistant", content: response }])
     } catch (error) {
       console.error("Error getting AI response:", error)
+      toast({
+        title: "Error",
+        description: "Failed to get a response from the AI assistant. Please try again.",
+        variant: "destructive",
+      })
       setMessages((prev) => [
         ...prev,
         { role: "assistant", content: "Sorry, I encountered an error. Please try again later." },
