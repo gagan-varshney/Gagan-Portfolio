@@ -24,13 +24,17 @@ export default function RootLayout({
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              window.onload = function() {
+              document.addEventListener('DOMContentLoaded', function() {
                 window.scrollTo(0, 0);
+              });
+              
+              if (history.scrollRestoration) {
+                history.scrollRestoration = 'manual';
               }
-              if (window.location.hash) {
-                window.history.scrollRestoration = 'manual';
-                window.history.replaceState('', document.title, window.location.pathname);
-              }
+              
+              window.onbeforeunload = function() {
+                window.scrollTo(0, 0);
+              };
             `,
           }}
         />

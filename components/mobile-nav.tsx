@@ -59,13 +59,6 @@ export default function MobileNav() {
             Skills
           </Link>
           <Link
-            href="#ai-assistant"
-            className="text-lg font-medium transition-colors hover:text-theme-600"
-            onClick={handleLinkClick}
-          >
-            AI Assistant
-          </Link>
-          <Link
             href="#contact"
             className="text-lg font-medium transition-colors hover:text-theme-600"
             onClick={handleLinkClick}

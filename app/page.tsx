@@ -10,6 +10,24 @@ import {
   Server,
   Database,
   PenToolIcon as Tool,
+  CodepenIcon as ReactIcon,
+  LayoutIcon,
+  FileCodeIcon,
+  FileTypeIcon,
+  CodepenIcon as CssIcon,
+  PaintBucketIcon,
+  BackpackIcon as BootstrapIcon,
+  ServerIcon,
+  PackageIcon,
+  PiIcon as ApiIcon,
+  FlameIcon,
+  DatabaseIcon,
+  DatabaseIcon as SqlIcon,
+  BookOpenIcon,
+  GitBranchIcon,
+  ContainerIcon,
+  CodepenIcon as NpmIcon,
+  SendIcon,
 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
@@ -18,12 +36,13 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import ContactForm from "@/components/contact-form"
-import AIChat from "@/components/ai-chat"
 import MobileNav from "@/components/mobile-nav"
+import ScrollToTop from "@/components/scroll-to-top"
 
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
+      <ScrollToTop />
       <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container flex h-14 items-center">
           <div className="mr-4 hidden md:flex ml-6">
@@ -45,9 +64,6 @@ export default function Home() {
               </Link>
               <Link href="#skills" className="transition-colors hover:text-foreground/80">
                 Skills
-              </Link>
-              <Link href="#ai-assistant" className="transition-colors hover:text-foreground/80">
-                AI Assistant
               </Link>
               <Link href="#contact" className="transition-colors hover:text-foreground/80">
                 Contact
@@ -164,7 +180,7 @@ export default function Home() {
                     <h3 className="text-2xl font-bold text-theme-700">Gagan Varshney</h3>
                     <p className="text-theme-600">Full Stack Developer</p>
                   </div>
-                  <a href="/gagan-varshney-resume.pdf" download>
+                  <a href="/gagan-varshney-resume.txt" download>
                     <Button className="bg-theme-600 hover:bg-theme-700">
                       <Download className="mr-2 h-4 w-4" /> Download Resume
                     </Button>
@@ -240,8 +256,10 @@ export default function Home() {
                 </div>
 
                 <div className="mt-8 text-center">
-                  <p className="text-muted-foreground">For a complete version of my resume, please download the PDF.</p>
-                  <a href="/gagan-varshney-resume.pdf" download>
+                  <p className="text-muted-foreground">
+                    For a complete version of my resume, please download the text file.
+                  </p>
+                  <a href="/gagan-varshney-resume.txt" download>
                     <Button className="mt-4 bg-theme-600 hover:bg-theme-700">
                       <Download className="mr-2 h-4 w-4" /> Download Full Resume
                     </Button>
@@ -404,37 +422,19 @@ export default function Home() {
                     <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
                       <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-lg transition-all hover:border-theme-500 hover:bg-theme-50 group">
                         <div className="h-12 w-12 rounded-full bg-theme-100 flex items-center justify-center group-hover:bg-theme-200 transition-colors">
-                          <Image
-                            src="/logos/react-logo.png"
-                            alt="React"
-                            width={30}
-                            height={30}
-                            className="object-contain"
-                          />
+                          <ReactIcon className="h-6 w-6 text-blue-500" />
                         </div>
                         <div className="text-lg font-semibold text-theme-700 group-hover:text-theme-800">React.js</div>
                       </div>
                       <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-lg transition-all hover:border-theme-500 hover:bg-theme-50 group">
                         <div className="h-12 w-12 rounded-full bg-theme-100 flex items-center justify-center group-hover:bg-theme-200 transition-colors">
-                          <Image
-                            src="/logos/nextjs-logo.png"
-                            alt="Next.js"
-                            width={30}
-                            height={30}
-                            className="object-contain"
-                          />
+                          <LayoutIcon className="h-6 w-6 text-black" />
                         </div>
                         <div className="text-lg font-semibold text-theme-700 group-hover:text-theme-800">Next.js</div>
                       </div>
                       <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-lg transition-all hover:border-theme-500 hover:bg-theme-50 group">
                         <div className="h-12 w-12 rounded-full bg-theme-100 flex items-center justify-center group-hover:bg-theme-200 transition-colors">
-                          <Image
-                            src="/logos/javascript-logo.png"
-                            alt="JavaScript"
-                            width={30}
-                            height={30}
-                            className="object-contain"
-                          />
+                          <FileCodeIcon className="h-6 w-6 text-yellow-500" />
                         </div>
                         <div className="text-lg font-semibold text-theme-700 group-hover:text-theme-800">
                           JavaScript
@@ -442,37 +442,19 @@ export default function Home() {
                       </div>
                       <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-lg transition-all hover:border-theme-500 hover:bg-theme-50 group">
                         <div className="h-12 w-12 rounded-full bg-theme-100 flex items-center justify-center group-hover:bg-theme-200 transition-colors">
-                          <Image
-                            src="/logos/html5-logo.png"
-                            alt="HTML5"
-                            width={30}
-                            height={30}
-                            className="object-contain"
-                          />
+                          <FileTypeIcon className="h-6 w-6 text-orange-500" />
                         </div>
                         <div className="text-lg font-semibold text-theme-700 group-hover:text-theme-800">HTML5</div>
                       </div>
                       <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-lg transition-all hover:border-theme-500 hover:bg-theme-50 group">
                         <div className="h-12 w-12 rounded-full bg-theme-100 flex items-center justify-center group-hover:bg-theme-200 transition-colors">
-                          <Image
-                            src="/logos/css3-logo.png"
-                            alt="CSS3"
-                            width={30}
-                            height={30}
-                            className="object-contain"
-                          />
+                          <CssIcon className="h-6 w-6 text-blue-600" />
                         </div>
                         <div className="text-lg font-semibold text-theme-700 group-hover:text-theme-800">CSS3</div>
                       </div>
                       <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-lg transition-all hover:border-theme-500 hover:bg-theme-50 group">
                         <div className="h-12 w-12 rounded-full bg-theme-100 flex items-center justify-center group-hover:bg-theme-200 transition-colors">
-                          <Image
-                            src="/logos/tailwind-logo.png"
-                            alt="Tailwind CSS"
-                            width={30}
-                            height={30}
-                            className="object-contain"
-                          />
+                          <PaintBucketIcon className="h-6 w-6 text-cyan-500" />
                         </div>
                         <div className="text-lg font-semibold text-theme-700 group-hover:text-theme-800">
                           Tailwind CSS
@@ -480,13 +462,7 @@ export default function Home() {
                       </div>
                       <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-lg transition-all hover:border-theme-500 hover:bg-theme-50 group">
                         <div className="h-12 w-12 rounded-full bg-theme-100 flex items-center justify-center group-hover:bg-theme-200 transition-colors">
-                          <Image
-                            src="/logos/bootstrap-logo.png"
-                            alt="Bootstrap"
-                            width={30}
-                            height={30}
-                            className="object-contain"
-                          />
+                          <BootstrapIcon className="h-6 w-6 text-purple-600" />
                         </div>
                         <div className="text-lg font-semibold text-theme-700 group-hover:text-theme-800">Bootstrap</div>
                       </div>
@@ -496,25 +472,13 @@ export default function Home() {
                     <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
                       <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-lg transition-all hover:border-theme-500 hover:bg-theme-50 group">
                         <div className="h-12 w-12 rounded-full bg-theme-100 flex items-center justify-center group-hover:bg-theme-200 transition-colors">
-                          <Image
-                            src="/logos/nodejs-logo.png"
-                            alt="Node.js"
-                            width={30}
-                            height={30}
-                            className="object-contain"
-                          />
+                          <ServerIcon className="h-6 w-6 text-green-600" />
                         </div>
                         <div className="text-lg font-semibold text-theme-700 group-hover:text-theme-800">Node.js</div>
                       </div>
                       <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-lg transition-all hover:border-theme-500 hover:bg-theme-50 group">
                         <div className="h-12 w-12 rounded-full bg-theme-100 flex items-center justify-center group-hover:bg-theme-200 transition-colors">
-                          <Image
-                            src="/logos/express-logo.png"
-                            alt="Express.js"
-                            width={30}
-                            height={30}
-                            className="object-contain"
-                          />
+                          <PackageIcon className="h-6 w-6 text-gray-600" />
                         </div>
                         <div className="text-lg font-semibold text-theme-700 group-hover:text-theme-800">
                           Express.js
@@ -522,13 +486,7 @@ export default function Home() {
                       </div>
                       <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-lg transition-all hover:border-theme-500 hover:bg-theme-50 group">
                         <div className="h-12 w-12 rounded-full bg-theme-100 flex items-center justify-center group-hover:bg-theme-200 transition-colors">
-                          <Image
-                            src="/placeholder.svg?height=48&width=48"
-                            alt="RESTful APIs"
-                            width={30}
-                            height={30}
-                            className="object-contain"
-                          />
+                          <ApiIcon className="h-6 w-6 text-blue-700" />
                         </div>
                         <div className="text-lg font-semibold text-theme-700 group-hover:text-theme-800">
                           RESTful APIs
@@ -536,13 +494,7 @@ export default function Home() {
                       </div>
                       <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-lg transition-all hover:border-theme-500 hover:bg-theme-50 group">
                         <div className="h-12 w-12 rounded-full bg-theme-100 flex items-center justify-center group-hover:bg-theme-200 transition-colors">
-                          <Image
-                            src="/placeholder.svg?height=48&width=48"
-                            alt="Firebase"
-                            width={30}
-                            height={30}
-                            className="object-contain"
-                          />
+                          <FlameIcon className="h-6 w-6 text-orange-500" />
                         </div>
                         <div className="text-lg font-semibold text-theme-700 group-hover:text-theme-800">Firebase</div>
                       </div>
@@ -552,37 +504,19 @@ export default function Home() {
                     <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
                       <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-lg transition-all hover:border-theme-500 hover:bg-theme-50 group">
                         <div className="h-12 w-12 rounded-full bg-theme-100 flex items-center justify-center group-hover:bg-theme-200 transition-colors">
-                          <Image
-                            src="/logos/mongodb-logo.png"
-                            alt="MongoDB"
-                            width={30}
-                            height={30}
-                            className="object-contain"
-                          />
+                          <DatabaseIcon className="h-6 w-6 text-green-600" />
                         </div>
                         <div className="text-lg font-semibold text-theme-700 group-hover:text-theme-800">MongoDB</div>
                       </div>
                       <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-lg transition-all hover:border-theme-500 hover:bg-theme-50 group">
                         <div className="h-12 w-12 rounded-full bg-theme-100 flex items-center justify-center group-hover:bg-theme-200 transition-colors">
-                          <Image
-                            src="/logos/mysql-logo.png"
-                            alt="MySQL"
-                            width={30}
-                            height={30}
-                            className="object-contain"
-                          />
+                          <SqlIcon className="h-6 w-6 text-blue-600" />
                         </div>
                         <div className="text-lg font-semibold text-theme-700 group-hover:text-theme-800">MySQL</div>
                       </div>
                       <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-lg transition-all hover:border-theme-500 hover:bg-theme-50 group">
                         <div className="h-12 w-12 rounded-full bg-theme-100 flex items-center justify-center group-hover:bg-theme-200 transition-colors">
-                          <Image
-                            src="/placeholder.svg?height=48&width=48"
-                            alt="Mongoose"
-                            width={30}
-                            height={30}
-                            className="object-contain"
-                          />
+                          <BookOpenIcon className="h-6 w-6 text-green-700" />
                         </div>
                         <div className="text-lg font-semibold text-theme-700 group-hover:text-theme-800">Mongoose</div>
                       </div>
@@ -592,73 +526,31 @@ export default function Home() {
                     <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
                       <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-lg transition-all hover:border-theme-500 hover:bg-theme-50 group">
                         <div className="h-12 w-12 rounded-full bg-theme-100 flex items-center justify-center group-hover:bg-theme-200 transition-colors">
-                          <Image
-                            src="/logos/git-logo.png"
-                            alt="Git"
-                            width={30}
-                            height={30}
-                            className="object-contain"
-                          />
+                          <GitBranchIcon className="h-6 w-6 text-orange-600" />
                         </div>
                         <div className="text-lg font-semibold text-theme-700 group-hover:text-theme-800">Git</div>
                       </div>
                       <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-lg transition-all hover:border-theme-500 hover:bg-theme-50 group">
                         <div className="h-12 w-12 rounded-full bg-theme-100 flex items-center justify-center group-hover:bg-theme-200 transition-colors">
-                          <Image
-                            src="/logos/docker-logo.png"
-                            alt="Docker"
-                            width={30}
-                            height={30}
-                            className="object-contain"
-                          />
+                          <ContainerIcon className="h-6 w-6 text-blue-600" />
                         </div>
                         <div className="text-lg font-semibold text-theme-700 group-hover:text-theme-800">Docker</div>
                       </div>
                       <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-lg transition-all hover:border-theme-500 hover:bg-theme-50 group">
                         <div className="h-12 w-12 rounded-full bg-theme-100 flex items-center justify-center group-hover:bg-theme-200 transition-colors">
-                          <Image
-                            src="/logos/npm-logo.png"
-                            alt="npm"
-                            width={30}
-                            height={30}
-                            className="object-contain"
-                          />
+                          <NpmIcon className="h-6 w-6 text-red-600" />
                         </div>
                         <div className="text-lg font-semibold text-theme-700 group-hover:text-theme-800">npm</div>
                       </div>
                       <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-lg transition-all hover:border-theme-500 hover:bg-theme-50 group">
                         <div className="h-12 w-12 rounded-full bg-theme-100 flex items-center justify-center group-hover:bg-theme-200 transition-colors">
-                          <Image
-                            src="/logos/postman-logo.png"
-                            alt="Postman"
-                            width={30}
-                            height={30}
-                            className="object-contain"
-                          />
+                          <SendIcon className="h-6 w-6 text-orange-500" />
                         </div>
                         <div className="text-lg font-semibold text-theme-700 group-hover:text-theme-800">Postman</div>
                       </div>
                     </div>
                   </TabsContent>
                 </Tabs>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="ai-assistant" className="w-full py-12 md:py-24 lg:py-32 gradient-bg">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-8 text-center">
-              <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-theme-700">
-                  AI Assistant
-                </h2>
-                <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
-                  Chat with my AI assistant powered by Grok to learn more about my skills and experience.
-                </p>
-              </div>
-              <div className="flex items-center justify-center w-full">
-                <AIChat />
               </div>
             </div>
           </div>
