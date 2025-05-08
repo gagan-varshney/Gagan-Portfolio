@@ -3,7 +3,7 @@ import OpenAI from "openai"
 
 // Create SDK client using the provided API key directly
 const client = new OpenAI({
-  apiKey: "xai-cpIorzSmLVkxyClqz3yoyvUv3sYeSK3ZaMw0VQo1LFpLbVb6rhpT2UJkTVDYni3809iagfQR8GeETTa3",
+  apiKey: process.env.XAI_API_KEY,
   baseURL: "https://api.x.ai/v1",
 })
 

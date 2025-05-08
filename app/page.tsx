@@ -164,7 +164,7 @@ export default function Home() {
                     <h3 className="text-2xl font-bold text-theme-700">Gagan Varshney</h3>
                     <p className="text-theme-600">Full Stack Developer</p>
                   </div>
-                  <a href="/gagan-varshney-resume.txt" download>
+                  <a href="/gagan-varshney-resume.pdf" download>
                     <Button className="bg-theme-600 hover:bg-theme-700">
                       <Download className="mr-2 h-4 w-4" /> Download Resume
                     </Button>
@@ -241,7 +241,7 @@ export default function Home() {
 
                 <div className="mt-8 text-center">
                   <p className="text-muted-foreground">For a complete version of my resume, please download the PDF.</p>
-                  <a href="/gagan-varshney-resume.txt" download>
+                  <a href="/gagan-varshney-resume.pdf" download>
                     <Button className="mt-4 bg-theme-600 hover:bg-theme-700">
                       <Download className="mr-2 h-4 w-4" /> Download Full Resume
                     </Button>
@@ -405,7 +405,7 @@ export default function Home() {
                       <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-lg transition-all hover:border-theme-500 hover:bg-theme-50 group">
                         <div className="h-12 w-12 rounded-full bg-theme-100 flex items-center justify-center group-hover:bg-theme-200 transition-colors">
                           <Image
-                            src="/placeholder.svg?height=48&width=48"
+                            src="/logos/react-logo.png"
                             alt="React"
                             width={30}
                             height={30}
@@ -417,7 +417,7 @@ export default function Home() {
                       <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-lg transition-all hover:border-theme-500 hover:bg-theme-50 group">
                         <div className="h-12 w-12 rounded-full bg-theme-100 flex items-center justify-center group-hover:bg-theme-200 transition-colors">
                           <Image
-                            src="/placeholder.svg?height=48&width=48"
+                            src="/logos/nextjs-logo.png"
                             alt="Next.js"
                             width={30}
                             height={30}
@@ -429,7 +429,7 @@ export default function Home() {
                       <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-lg transition-all hover:border-theme-500 hover:bg-theme-50 group">
                         <div className="h-12 w-12 rounded-full bg-theme-100 flex items-center justify-center group-hover:bg-theme-200 transition-colors">
                           <Image
-                            src="/placeholder.svg?height=48&width=48"
+                            src="/logos/javascript-logo.png"
                             alt="JavaScript"
                             width={30}
                             height={30}
@@ -443,7 +443,7 @@ export default function Home() {
                       <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-lg transition-all hover:border-theme-500 hover:bg-theme-50 group">
                         <div className="h-12 w-12 rounded-full bg-theme-100 flex items-center justify-center group-hover:bg-theme-200 transition-colors">
                           <Image
-                            src="/placeholder.svg?height=48&width=48"
+                            src="/logos/html5-logo.png"
                             alt="HTML5"
                             width={30}
                             height={30}
@@ -455,7 +455,7 @@ export default function Home() {
                       <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-lg transition-all hover:border-theme-500 hover:bg-theme-50 group">
                         <div className="h-12 w-12 rounded-full bg-theme-100 flex items-center justify-center group-hover:bg-theme-200 transition-colors">
                           <Image
-                            src="/placeholder.svg?height=48&width=48"
+                            src="/logos/css3-logo.png"
                             alt="CSS3"
                             width={30}
                             height={30}
@@ -467,7 +467,7 @@ export default function Home() {
                       <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-lg transition-all hover:border-theme-500 hover:bg-theme-50 group">
                         <div className="h-12 w-12 rounded-full bg-theme-100 flex items-center justify-center group-hover:bg-theme-200 transition-colors">
                           <Image
-                            src="/placeholder.svg?height=48&width=48"
+                            src="/logos/tailwind-logo.png"
                             alt="Tailwind CSS"
                             width={30}
                             height={30}
@@ -481,7 +481,7 @@ export default function Home() {
                       <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-lg transition-all hover:border-theme-500 hover:bg-theme-50 group">
                         <div className="h-12 w-12 rounded-full bg-theme-100 flex items-center justify-center group-hover:bg-theme-200 transition-colors">
                           <Image
-                            src="/placeholder.svg?height=48&width=48"
+                            src="/logos/bootstrap-logo.png"
                             alt="Bootstrap"
                             width={30}
                             height={30}
@@ -497,7 +497,7 @@ export default function Home() {
                       <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-lg transition-all hover:border-theme-500 hover:bg-theme-50 group">
                         <div className="h-12 w-12 rounded-full bg-theme-100 flex items-center justify-center group-hover:bg-theme-200 transition-colors">
                           <Image
-                            src="/placeholder.svg?height=48&width=48"
+                            src="/logos/nodejs-logo.png"
                             alt="Node.js"
                             width={30}
                             height={30}
@@ -509,7 +509,7 @@ export default function Home() {
                       <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-lg transition-all hover:border-theme-500 hover:bg-theme-50 group">
                         <div className="h-12 w-12 rounded-full bg-theme-100 flex items-center justify-center group-hover:bg-theme-200 transition-colors">
                           <Image
-                            src="/placeholder.svg?height=48&width=48"
+                            src="/logos/express-logo.png"
                             alt="Express.js"
                             width={30}
                             height={30}
@@ -553,7 +553,7 @@ export default function Home() {
                       <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-lg transition-all hover:border-theme-500 hover:bg-theme-50 group">
                         <div className="h-12 w-12 rounded-full bg-theme-100 flex items-center justify-center group-hover:bg-theme-200 transition-colors">
                           <Image
-                            src="/placeholder.svg?height=48&width=48"
+                            src="/logos/mongodb-logo.png"
                             alt="MongoDB"
                             width={30}
                             height={30}
@@ -565,7 +565,7 @@ export default function Home() {
                       <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-lg transition-all hover:border-theme-500 hover:bg-theme-50 group">
                         <div className="h-12 w-12 rounded-full bg-theme-100 flex items-center justify-center group-hover:bg-theme-200 transition-colors">
                           <Image
-                            src="/placeholder.svg?height=48&width=48"
+                            src="/logos/mysql-logo.png"
                             alt="MySQL"
                             width={30}
                             height={30}
@@ -593,7 +593,7 @@ export default function Home() {
                       <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-lg transition-all hover:border-theme-500 hover:bg-theme-50 group">
                         <div className="h-12 w-12 rounded-full bg-theme-100 flex items-center justify-center group-hover:bg-theme-200 transition-colors">
                           <Image
-                            src="/placeholder.svg?height=48&width=48"
+                            src="/logos/git-logo.png"
                             alt="Git"
                             width={30}
                             height={30}
@@ -605,7 +605,7 @@ export default function Home() {
                       <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-lg transition-all hover:border-theme-500 hover:bg-theme-50 group">
                         <div className="h-12 w-12 rounded-full bg-theme-100 flex items-center justify-center group-hover:bg-theme-200 transition-colors">
                           <Image
-                            src="/placeholder.svg?height=48&width=48"
+                            src="/logos/docker-logo.png"
                             alt="Docker"
                             width={30}
                             height={30}
@@ -617,7 +617,7 @@ export default function Home() {
                       <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-lg transition-all hover:border-theme-500 hover:bg-theme-50 group">
                         <div className="h-12 w-12 rounded-full bg-theme-100 flex items-center justify-center group-hover:bg-theme-200 transition-colors">
                           <Image
-                            src="/placeholder.svg?height=48&width=48"
+                            src="/logos/npm-logo.png"
                             alt="npm"
                             width={30}
                             height={30}
@@ -629,7 +629,7 @@ export default function Home() {
                       <div className="flex flex-col items-center space-y-2 rounded-lg border border-theme-200 p-4 shadow-sm hover:shadow-lg transition-all hover:border-theme-500 hover:bg-theme-50 group">
                         <div className="h-12 w-12 rounded-full bg-theme-100 flex items-center justify-center group-hover:bg-theme-200 transition-colors">
                           <Image
-                            src="/placeholder.svg?height=48&width=48"
+                            src="/logos/postman-logo.png"
                             alt="Postman"
                             width={30}
                             height={30}

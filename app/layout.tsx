@@ -20,20 +20,26 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          <Suspense fallback={null}>{children}</Suspense>
-        </ThemeProvider>
-        <Analytics />
+      <head>
         <script
           dangerouslySetInnerHTML={{
             __html: `
               window.onload = function() {
                 window.scrollTo(0, 0);
               }
+              if (window.location.hash) {
+                window.history.scrollRestoration = 'manual';
+                window.history.replaceState('', document.title, window.location.pathname);
+              }
             `,
           }}
         />
+      </head>
+      <body className={inter.className}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+          <Suspense fallback={null}>{children}</Suspense>
+        </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   )
