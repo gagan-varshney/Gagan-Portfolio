@@ -24,14 +24,22 @@ export default function RootLayout({
         <script
           dangerouslySetInnerHTML={{
             __html: `
+              // Force scroll to top on page load
+              if (typeof window !== 'undefined') {
+                window.scrollTo(0, 0);
+              }
+              
+              // Ensure scroll restoration is manual
+              if (typeof history !== 'undefined' && history.scrollRestoration) {
+                history.scrollRestoration = 'manual';
+              }
+              
+              // Add event listeners once DOM is loaded
               document.addEventListener('DOMContentLoaded', function() {
                 window.scrollTo(0, 0);
               });
               
-              if (history.scrollRestoration) {
-                history.scrollRestoration = 'manual';
-              }
-              
+              // Handle before unload to reset scroll position
               window.onbeforeunload = function() {
                 window.scrollTo(0, 0);
               };

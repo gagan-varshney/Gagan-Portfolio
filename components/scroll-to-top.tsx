@@ -8,8 +8,20 @@ export default function ScrollToTop() {
   const searchParams = useSearchParams()
 
   useEffect(() => {
-    // When the route changes, scroll to the top
+    // When the component mounts, scroll to the top
     window.scrollTo(0, 0)
+
+    // When the route changes, scroll to the top
+    const handleRouteChange = () => {
+      window.scrollTo(0, 0)
+    }
+
+    // Listen for route changes
+    window.addEventListener("popstate", handleRouteChange)
+
+    return () => {
+      window.removeEventListener("popstate", handleRouteChange)
+    }
   }, [pathname, searchParams])
 
   // This component doesn't render anything
