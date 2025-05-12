@@ -1,5 +1,4 @@
 import {
-  Download,
   FileText,
   Github,
   Linkedin,
@@ -38,6 +37,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import ContactForm from "@/components/contact-form"
 import MobileNav from "@/components/mobile-nav"
 import ScrollToTop from "@/components/scroll-to-top"
+import ResumeDownloadButton from "@/components/resume-download-button"
 
 export default function Home() {
   return (
@@ -180,11 +180,7 @@ export default function Home() {
                     <h3 className="text-2xl font-bold text-theme-700">Gagan Varshney</h3>
                     <p className="text-theme-600">Full Stack Developer</p>
                   </div>
-                  <a href="/gagan-varshney-resume.txt" download>
-                    <Button className="bg-theme-600 hover:bg-theme-700">
-                      <Download className="mr-2 h-4 w-4" /> Download Resume
-                    </Button>
-                  </a>
+                  <ResumeDownloadButton text="Download Resume" />
                 </div>
 
                 <div className="grid gap-6 md:grid-cols-2">
@@ -257,13 +253,9 @@ export default function Home() {
 
                 <div className="mt-8 text-center">
                   <p className="text-muted-foreground">
-                    For a complete version of my resume, please download the text file.
+                    For a complete version of my resume, please download the PDF file.
                   </p>
-                  <a href="/gagan-varshney-resume.txt" download>
-                    <Button className="mt-4 bg-theme-600 hover:bg-theme-700">
-                      <Download className="mr-2 h-4 w-4" /> Download Full Resume
-                    </Button>
-                  </a>
+                  <ResumeDownloadButton className="mt-4 bg-theme-600 hover:bg-theme-700" text="Download Full Resume" />
                 </div>
               </div>
             </div>
