@@ -3,13 +3,31 @@ import "@/app/globals.css"
 import { Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/react"
 import { ThemeProvider } from "@/components/theme-provider"
+import { Toaster } from "@/components/ui/toaster"
 import { Suspense } from "react"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
   title: "Gagan Varshney - Portfolio",
-  description: "Professional portfolio of Gagan Varshney, Software Engineer",
+  description:
+    "Professional portfolio of Gagan Varshney, Full Stack Developer specializing in React.js, Node.js, and MongoDB",
+  keywords: "Gagan Varshney, Full Stack Developer, React.js, Node.js, MongoDB, Web Developer, Portfolio",
+  authors: [{ name: "Gagan Varshney" }],
+  creator: "Gagan Varshney",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://gagan-varshney-portfolio.vercel.app",
+    title: "Gagan Varshney - Portfolio",
+    description: "Professional portfolio of Gagan Varshney, Full Stack Developer",
+    siteName: "Gagan Varshney Portfolio",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Gagan Varshney - Portfolio",
+    description: "Professional portfolio of Gagan Varshney, Full Stack Developer",
+  },
     generator: 'v0.dev'
 }
 
@@ -24,32 +42,21 @@ export default function RootLayout({
         <script
           dangerouslySetInnerHTML={{
             __html: `
-              // Force scroll to top on page load
-              if (typeof window !== 'undefined') {
-                window.scrollTo(0, 0);
-              }
+              // Simple scroll to top on page load
+              window.scrollTo(0, 0);
               
-              // Ensure scroll restoration is manual
-              if (typeof history !== 'undefined' && history.scrollRestoration) {
+              // Disable scroll restoration
+              if ('scrollRestoration' in history) {
                 history.scrollRestoration = 'manual';
               }
-              
-              // Add event listeners once DOM is loaded
-              document.addEventListener('DOMContentLoaded', function() {
-                window.scrollTo(0, 0);
-              });
-              
-              // Handle before unload to reset scroll position
-              window.onbeforeunload = function() {
-                window.scrollTo(0, 0);
-              };
             `,
           }}
         />
       </head>
       <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange={false}>
           <Suspense fallback={null}>{children}</Suspense>
+          <Toaster />
         </ThemeProvider>
         <Analytics />
       </body>

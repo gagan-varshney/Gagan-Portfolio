@@ -1,70 +1,69 @@
 "use client"
 
 import { useState } from "react"
-import { Menu } from "lucide-react"
+import { Menu, HomeIcon, User, Code, Briefcase, Mail } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import Link from "next/link"
 
 export default function MobileNav() {
   const [open, setOpen] = useState(false)
 
-  const handleLinkClick = () => {
-    setOpen(false)
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" })
+      setOpen(false)
+    }
   }
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
-        <Button variant="ghost" className="md:hidden p-2">
+        <Button variant="ghost" size="icon" className="md:hidden">
           <Menu className="h-6 w-6" />
           <span className="sr-only">Toggle menu</span>
         </Button>
       </SheetTrigger>
       <SheetContent side="left" className="w-[300px] sm:w-[400px]">
-        <div className="flex flex-col gap-6 mt-8">
-          <Link
-            href="#about"
-            className="text-lg font-medium transition-colors hover:text-theme-600"
-            onClick={handleLinkClick}
+        <div className="flex justify-between items-center mb-8">
+          <h2 className="text-lg font-bold">Gagan Varshney</h2>
+        </div>
+        <div className="flex flex-col gap-6">
+          <button
+            onClick={() => scrollToSection("home")}
+            className="flex items-center text-lg font-medium transition-colors hover:text-primary text-left"
           >
+            <HomeIcon className="mr-2 h-5 w-5" />
+            Home
+          </button>
+          <button
+            onClick={() => scrollToSection("about")}
+            className="flex items-center text-lg font-medium transition-colors hover:text-primary text-left"
+          >
+            <User className="mr-2 h-5 w-5" />
             About
-          </Link>
-          <Link
-            href="#resume"
-            className="text-lg font-medium transition-colors hover:text-theme-600"
-            onClick={handleLinkClick}
+          </button>
+          <button
+            onClick={() => scrollToSection("skills")}
+            className="flex items-center text-lg font-medium transition-colors hover:text-primary text-left"
           >
-            Resume
-          </Link>
-          <Link
-            href="#experience"
-            className="text-lg font-medium transition-colors hover:text-theme-600"
-            onClick={handleLinkClick}
-          >
-            Education
-          </Link>
-          <Link
-            href="#projects"
-            className="text-lg font-medium transition-colors hover:text-theme-600"
-            onClick={handleLinkClick}
-          >
-            Projects
-          </Link>
-          <Link
-            href="#skills"
-            className="text-lg font-medium transition-colors hover:text-theme-600"
-            onClick={handleLinkClick}
-          >
+            <Code className="mr-2 h-5 w-5" />
             Skills
-          </Link>
-          <Link
-            href="#contact"
-            className="text-lg font-medium transition-colors hover:text-theme-600"
-            onClick={handleLinkClick}
+          </button>
+          <button
+            onClick={() => scrollToSection("projects")}
+            className="flex items-center text-lg font-medium transition-colors hover:text-primary text-left"
           >
+            <Briefcase className="mr-2 h-5 w-5" />
+            Projects
+          </button>
+          <button
+            onClick={() => scrollToSection("contact")}
+            className="flex items-center text-lg font-medium transition-colors hover:text-primary text-left"
+          >
+            <Mail className="mr-2 h-5 w-5" />
             Contact
-          </Link>
+          </button>
         </div>
       </SheetContent>
     </Sheet>
