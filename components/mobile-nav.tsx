@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Menu, HomeIcon, User, Code, Briefcase, Mail } from "lucide-react"
+import { Menu, HomeIcon, User, Code, Briefcase, Mail, FileText } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 
@@ -42,6 +42,13 @@ export default function MobileNav() {
           >
             <User className="mr-2 h-5 w-5" />
             About
+          </button>
+          <button
+            onClick={() => scrollToSection("resume")}
+            className="flex items-center text-lg font-medium transition-colors hover:text-primary text-left"
+          >
+            <FileText className="mr-2 h-5 w-5" />
+            Resume
           </button>
           <button
             onClick={() => scrollToSection("skills")}

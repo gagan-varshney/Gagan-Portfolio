@@ -30,6 +30,7 @@ import {
   CodepenIcon as NpmIcon,
   SendIcon,
   HomeIcon,
+  FileText,
 } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
@@ -42,6 +43,7 @@ import ScrollToTop from "@/components/scroll-to-top"
 import { ThemeToggle } from "@/components/theme-toggle"
 import LanguageToggle from "@/components/language-toggle"
 import BackToTop from "@/components/back-to-top"
+import ResumeSection from "@/components/resume-section"
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState("home")
@@ -56,7 +58,7 @@ export default function Home() {
   // Scroll spy effect
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["home", "about", "skills", "projects", "contact"]
+      const sections = ["home", "about", "resume", "skills", "projects", "contact"]
       const scrollPosition = window.scrollY + 100
 
       for (const section of sections) {
@@ -151,6 +153,15 @@ export default function Home() {
                 About
               </button>
               <button
+                onClick={() => scrollToSection("resume")}
+                className={`nav-link ${activeSection === "resume" ? "active" : ""}`}
+              >
+                <span className="flex items-center">
+                  <FileText className="mr-1 h-4 w-4" />
+                  Resume
+                </span>
+              </button>
+              <button
                 onClick={() => scrollToSection("skills")}
                 className={`nav-link ${activeSection === "skills" ? "active" : ""}`}
               >
@@ -212,7 +223,7 @@ export default function Home() {
                   <p className="text-xl text-muted-foreground">Full Stack Developer</p>
                   <div className="flex items-center space-x-2 text-muted-foreground">
                     <MapPin className="h-4 w-4" />
-                    <span>Mathura, Uttar Pradesh, India</span>
+                    <span>Noida, Uttar Pradesh, India</span>
                   </div>
                   <div className="flex items-center space-x-2 text-muted-foreground">
                     <Phone className="h-4 w-4" />
@@ -227,8 +238,9 @@ export default function Home() {
                   <Button onClick={() => scrollToSection("contact")} className="btn-primary">
                     Contact Me
                   </Button>
-                  <Button variant="outline" onClick={() => scrollToSection("projects")}>
-                    View Projects
+                  <Button variant="outline" onClick={() => scrollToSection("resume")}>
+                    <FileText className="mr-2 h-4 w-4" />
+                    View Resume
                   </Button>
                 </div>
               </div>
@@ -267,7 +279,10 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="skills" className="w-full py-16 md:py-24">
+        {/* Resume Section */}
+        <ResumeSection />
+
+        <section id="skills" className="w-full py-16 md:py-24 gradient-bg">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-12">
               <h2 className="section-heading">Skills</h2>
@@ -345,7 +360,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="projects" className="w-full py-16 md:py-24 gradient-bg">
+        <section id="projects" className="w-full py-16 md:py-24">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-8">
               <h2 className="section-heading">Projects</h2>
@@ -413,7 +428,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="contact" className="w-full py-16 md:py-24">
+        <section id="contact" className="w-full py-16 md:py-24 gradient-bg">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-8">
               <h2 className="section-heading">Contact Me</h2>
@@ -463,6 +478,16 @@ export default function Home() {
                       >
                         +91 8979840948
                       </Link>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center space-x-3">
+                    <div className="p-3 rounded-full bg-primary/10">
+                      <MapPin className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <h3 className="font-medium">Location</h3>
+                      <span className="text-sm text-muted-foreground">Noida, Uttar Pradesh, India</span>
                     </div>
                   </div>
 
