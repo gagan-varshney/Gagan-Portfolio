@@ -27,7 +27,6 @@ import {
   BookOpenIcon,
   GitBranchIcon,
   ContainerIcon,
-  CodepenIcon as NpmIcon,
   SendIcon,
   HomeIcon,
   FileText,
@@ -44,6 +43,7 @@ import { ThemeToggle } from "@/components/theme-toggle"
 import LanguageToggle from "@/components/language-toggle"
 import BackToTop from "@/components/back-to-top"
 import ResumeSection from "@/components/resume-section"
+import ResumeDownloadButton from "@/components/resume-download-button"
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState("home")
@@ -87,6 +87,12 @@ export default function Home() {
     }
   }
 
+  const technicalSkills = [
+    { name: "C++", icon: <FileCodeIcon className="skill-icon" />, level: 85 },
+    { name: "Python", icon: <FileCodeIcon className="skill-icon" />, level: 80 },
+    { name: "Java", icon: <FileCodeIcon className="skill-icon" />, level: 75 },
+  ]
+
   const frontendSkills = [
     { name: "React.js", icon: <ReactIcon className="skill-icon" />, level: 90 },
     { name: "Next.js", icon: <LayoutIcon className="skill-icon" />, level: 85 },
@@ -100,6 +106,8 @@ export default function Home() {
   const backendSkills = [
     { name: "Node.js", icon: <ServerIcon className="skill-icon" />, level: 85 },
     { name: "Express.js", icon: <PackageIcon className="skill-icon" />, level: 80 },
+    { name: "Redux", icon: <PackageIcon className="skill-icon" />, level: 75 },
+    { name: "Context API", icon: <ApiIcon className="skill-icon" />, level: 80 },
     { name: "RESTful APIs", icon: <ApiIcon className="skill-icon" />, level: 90 },
     { name: "Firebase", icon: <FlameIcon className="skill-icon" />, level: 75 },
   ]
@@ -110,10 +118,10 @@ export default function Home() {
     { name: "Mongoose", icon: <BookOpenIcon className="skill-icon" />, level: 85 },
   ]
 
-  const toolsSkills = [
+  const productionSkills = [
     { name: "Git", icon: <GitBranchIcon className="skill-icon" />, level: 85 },
+    { name: "Vercel", icon: <ContainerIcon className="skill-icon" />, level: 80 },
     { name: "Docker", icon: <ContainerIcon className="skill-icon" />, level: 70 },
-    { name: "npm", icon: <NpmIcon className="skill-icon" />, level: 90 },
     { name: "Postman", icon: <SendIcon className="skill-icon" />, level: 85 },
   ]
 
@@ -231,17 +239,14 @@ export default function Home() {
                   </div>
                 </div>
                 <p className="max-w-[600px] text-muted-foreground md:text-xl">
-                  Specializing in React.js, Node.js, and MongoDB with expertise in building responsive web applications.
-                  Passionate about delivering scalable, user-friendly solutions with clean and maintainable code.
+                  Full Stack Developer specializing in React.js, Node.js, and MongoDB with expertise in building
+                  responsive web applications. Strong problem-solving skills with a focus on performance optimization.
                 </p>
                 <div className="flex flex-col gap-3 min-[400px]:flex-row">
                   <Button onClick={() => scrollToSection("contact")} className="btn-primary">
                     Contact Me
                   </Button>
-                  <Button variant="outline" onClick={() => scrollToSection("resume")}>
-                    <FileText className="mr-2 h-4 w-4" />
-                    View Resume
-                  </Button>
+                  <ResumeDownloadButton text="Download Resume" variant="outline" />
                 </div>
               </div>
               <div className="flex items-center justify-center">
@@ -267,8 +272,8 @@ export default function Home() {
               <div className="max-w-3xl space-y-6">
                 <p className="text-lg">
                   I'm a Full Stack Developer specializing in React.js, Node.js, and MongoDB with expertise in building
-                  responsive web applications. Certified in MongoDB and experienced in AI integration projects. I have
-                  strong problem-solving skills with a focus on performance optimization.
+                  responsive web applications. I have strong problem-solving skills with a focus on performance
+                  optimization.
                 </p>
                 <p className="text-lg">
                   I'm passionate about delivering scalable, user-friendly solutions with clean and maintainable code. My
@@ -290,7 +295,24 @@ export default function Home() {
               <div className="w-full max-w-6xl space-y-12">
                 <div>
                   <h3 className="text-xl font-semibold mb-6 flex items-center justify-center">
-                    <Code className="mr-2 h-5 w-5 text-primary" /> Frontend Development
+                    <Code className="mr-2 h-5 w-5 text-primary" /> Technical Languages
+                  </h3>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+                    {technicalSkills.map((skill, index) => (
+                      <div key={index} className="skill-item fade-in">
+                        {skill.icon}
+                        <span className="skill-name">{skill.name}</span>
+                        <div className="skill-level">
+                          <div className="skill-level-fill" style={{ width: `${skill.level}%` }}></div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div>
+                  <h3 className="text-xl font-semibold mb-6 flex items-center justify-center">
+                    <LayoutIcon className="mr-2 h-5 w-5 text-primary" /> Frontend Tools
                   </h3>
                   <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
                     {frontendSkills.map((skill, index) => (
@@ -307,9 +329,9 @@ export default function Home() {
 
                 <div>
                   <h3 className="text-xl font-semibold mb-6 flex items-center justify-center">
-                    <Server className="mr-2 h-5 w-5 text-primary" /> Backend Development
+                    <Server className="mr-2 h-5 w-5 text-primary" /> Backend Tools
                   </h3>
-                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
                     {backendSkills.map((skill, index) => (
                       <div key={index} className="skill-item fade-in">
                         {skill.icon}
@@ -324,7 +346,7 @@ export default function Home() {
 
                 <div>
                   <h3 className="text-xl font-semibold mb-6 flex items-center justify-center">
-                    <Database className="mr-2 h-5 w-5 text-primary" /> Database
+                    <Database className="mr-2 h-5 w-5 text-primary" /> Databases
                   </h3>
                   <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
                     {databaseSkills.map((skill, index) => (
@@ -341,10 +363,10 @@ export default function Home() {
 
                 <div>
                   <h3 className="text-xl font-semibold mb-6 flex items-center justify-center">
-                    <Tool className="mr-2 h-5 w-5 text-primary" /> Tools & Technologies
+                    <Tool className="mr-2 h-5 w-5 text-primary" /> Production Tools
                   </h3>
                   <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-                    {toolsSkills.map((skill, index) => (
+                    {productionSkills.map((skill, index) => (
                       <div key={index} className="skill-item fade-in">
                         {skill.icon}
                         <span className="skill-name">{skill.name}</span>
@@ -371,19 +393,18 @@ export default function Home() {
                   </div>
                   <CardHeader>
                     <CardTitle className="text-primary">AI Trip Planner</CardTitle>
-                    <CardDescription>React.js, Firebase, Gemini AI</CardDescription>
+                    <CardDescription>React.js, JavaScript, Tailwind, Firebase, Gemini AI</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <ul className="list-disc pl-5 space-y-2 text-sm">
                       <li>
-                        Developed a full-stack AI-based travel assistant that streamlines trip planning by generating
-                        personalized itineraries.
+                        Developed a full-stack web application for AI-powered trip planning with customized itineraries.
                       </li>
                       <li>
-                        Integrated Gemini AI to understand user preferences and provide destination, hotel, and activity
-                        suggestions.
+                        Integrated Gemini AI for intelligent trip generation and Google Maps API for location
+                        visualization.
                       </li>
-                      <li>Connected to Google Maps API for route visualization and real-time data display.</li>
+                      <li>Implemented user authentication and real-time data handling using Firebase.</li>
                     </ul>
                     <div className="mt-4">
                       <Button variant="outline" size="sm" asChild>
@@ -400,19 +421,22 @@ export default function Home() {
                     <div className="text-6xl">🎬</div>
                   </div>
                   <CardHeader>
-                    <CardTitle className="text-primary">JioCinema Clone</CardTitle>
-                    <CardDescription>React.js, Node.js, MongoDB</CardDescription>
+                    <CardTitle className="text-primary">JioCinema</CardTitle>
+                    <CardDescription>React.js, JavaScript, Tailwind, Node.js, RESTful API</CardDescription>
                   </CardHeader>
                   <CardContent>
                     <ul className="list-disc pl-5 space-y-2 text-sm">
                       <li>
-                        Created a video streaming platform with features like browsing, searching, user login, and video
-                        playback.
+                        Developed an OTT streaming platform where users can watch movies, TV shows, and live sports.
                       </li>
                       <li>
-                        Designed responsive UI using Tailwind CSS with performance optimizations for mobile and desktop.
+                        Designed a clean, user-friendly interface with React.js and Tailwind CSS for a smooth
+                        experience.
                       </li>
-                      <li>Developed backend with Node.js and Express, incorporating RESTful API architecture.</li>
+                      <li>
+                        Added features like video streaming, user authentication, and personalized content
+                        recommendations.
+                      </li>
                     </ul>
                     <div className="mt-4">
                       <Button variant="outline" size="sm" asChild>

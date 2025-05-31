@@ -1,27 +1,26 @@
 GAGAN VARSHNEY
-Phone: +91 8979840948  Email: gv1678087@gmail.com
-LinkedIn: linkedin.com/in/gagan-varshney22  GitHub: github.com/gagan-varshney
-Location: Noida, Uttar Pradesh, India
+Phone: +918979840948 | Email: gv1678087@gmail.com | LinkedIn: linkedin.com/in/gagan-varshney22 | GitHub: github.com/gagan-varshney
+Location: Noida, India
 
-SUMMARY
+CAREER OBJECTIVE
 Full Stack Developer specializing in React.js, Node.js, and MongoDB with expertise in building responsive web
-applications. Certified in MongoDB and experienced in AI integration projects. Strong problem-solving skills with
-a focus on performance optimization. Passionate about delivering scalable, user-friendly solutions with clean and
-maintainable code.
-
-TECHNICAL SKILLS
-Frontend: React.js, Next.js, JavaScript (ES6+), HTML5, CSS3, Tailwind CSS, Bootstrap
-Backend: Node.js, Express.js, RESTful APIs, Firebase
-Databases: MongoDB, MySQL, Mongoose
-Tools: Git, Docker, npm, Postman
-Soft Skills: Problem Solving, Critical Thinking, Project Management
+applications. Strong problem-solving skills with a focus on performance optimization. Passionate about delivering
+scalable, user-friendly solutions with clean and maintainable code.
 
 EDUCATION
-Master of Computer Application                                                Aug 2023 - May 2025 (Expected)
-GLA University Mathura                                                        GPA: 7.19/10
+Master of Computer Application - 7.44/10                                     Aug 2023 - May 2025 (Expected)
+GLA University Mathura
 
 B.Sc                                                                          Aug 2020 - June 2023
 Dr. Bhimrao Ambedkar University, Agra
+
+SKILLS
+Technical Languages: C++, Python, Java
+Frontend Tools: React.js, JavaScript, HTML5, CSS3, Tailwind CSS, Bootstrap
+Backend Tools: Node.js, Express.js, Redux, Context API, RESTful APIs, Firebase
+Databases: MongoDB, MySQL, Mongoose
+Production Tools: Git, Vercel, Docker
+Professional Skills: Critical Thinking, Problem Solver, Project ownership
 
 PROJECTS
 AI Trip Planner                                                               React.js, Firebase, Gemini AI
@@ -40,13 +39,13 @@ JioCinema Clone                                                               Re
 –Added intelligent recommendation system using trending content and user behavior.
 
 CERTIFICATIONS
-•MongoDB for Students - MongoDB University (2024)
-•SEO Certification - Semrush Academy (2024)
-•React Hooks Certification - GreatStack (2024)
+• Introduction to MongoDB for Students - MongoDB University (2024)
+• SEO certificate - Semrush Academy (2024)
+• React Hooks Crash Course - GreatStack (2024)
 
 ACHIEVEMENTS
-•Won Best DSE Award at VI Cellular Limited (2019)
-•Top Performer in Hackathon for Food Delivery App (2024)
+• Participated in Hackathon (Food Delivery App) (2024)
+• Won Best DSE Award at VI Cellular Limited (2019)
 
 INTERESTS
-•Cricket, Photography, Travel
+• Cricket, Photography, Travel
